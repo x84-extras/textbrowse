@@ -13,6 +13,7 @@ You can also pass a textfile as an argument to the script.
 Using the script to display .txt files in fbrowse.py
 ----------------------------------------------------
 As the fbrowse.py script is being updated constantly there can't be any precise installation instructions.
+
 1. Search for 'if lightbar.selected or inp in (term.KEY_LEFT, term.KEY_RIGHT,):' in fbrowse.py
 2. Add the following lines of code beneath that line:
 
