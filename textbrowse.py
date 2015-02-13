@@ -17,7 +17,7 @@ import os
 import codecs
 
 __author__ = 'Hellbeard'
-__version__ = 2.0
+__version__ = 2.01
 
 LIGHTBAR_X = 5
 LIGHTBAR_Y = 8
