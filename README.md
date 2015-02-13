@@ -18,8 +18,8 @@ As the fbrowse.py script is being updated constantly there can't be any precise 
 2. Add the following lines of code beneath that line:
 
    ```python
-   if os.path.splitext(filename)[1][1:].lower() == 'txt'
-           and (lightbar.selected or inp == term.KEY_RIGHT):
+   if ext in COLLY_EXTENSIONS
+           and (lightbar.selected or inp is term.KEY_RIGHT):
        gosub('textbrowse',filepath,'/',filename)
        draw_interface(term, lightbar)
    ```
