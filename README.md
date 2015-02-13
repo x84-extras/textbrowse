@@ -17,9 +17,11 @@ As the fbrowse.py script is being updated constantly there can't be any precise 
 1. Search for 'if lightbar.selected or inp in (term.KEY_LEFT, term.KEY_RIGHT,):' in fbrowse.py
 2. Add the following lines of code beneath that line:
 
-            if os.path.splitext(filename)[1][1:].lower() == 'txt'
-                    and (lightbar.selected or inp == term.KEY_RIGHT):
-                gosub('textbrowse',filepath,'/',filename)
-                draw_interface(term, lightbar)
-
+   ```python
+   if os.path.splitext(filename)[1][1:].lower() == 'txt'
+           and (lightbar.selected or inp == term.KEY_RIGHT):
+       gosub('textbrowse',filepath,'/',filename)
+       draw_interface(term, lightbar)
+   ```
+   
 Enjoy!
