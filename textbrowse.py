@@ -57,7 +57,7 @@ def displayfile(filename):
             echo(term.move(0,0)+term.normal)
             for i in range (0, term.height-1):
                 if len(text) > i+offset:
-                    echo(term.clear_eol+term.move_x((term.width/2)-40)+text[i+offset])
+                    echo(term.clear_eol+term.move_x(max(0,(term.width/2)-40))+text[i+offset])
         event, data = session.read_events(('input', 'refresh'))
 
         if event == 'refresh':
