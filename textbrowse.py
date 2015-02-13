@@ -40,6 +40,7 @@ def displayfile(filename):
     text = []
     offset = 0
     quit = False
+    istext = False
     dirty = True
     echo(term.clear)
 
@@ -47,16 +48,20 @@ def displayfile(filename):
         file = codecs.open(filename,encoding='cp437')
         for line in file:
             text.append(line.rstrip())
+        istext = True
     else:
         for line in showart(filename): # ansi / ascii files are opened with showart
             text.append(line)
-
     while not quit:
         if dirty:
             echo(term.move(0,0)+term.normal)
             for i in range (0, term.height-1):
                 if len(text) > i+offset:
-                    echo(term.clear_eol+term.move_x(max(0,(term.width/2)-40))+text[i+offset][:term.width]+'\r\n')
+                    if istext == True: # atleast we can prevent text files from wrapping..
+                        echo(term.clear_eol+term.move_x(max(0,(term.width/2)-40))+text[i+offset][:term.width]+'\r\n')
+                    else:
+                        echo(term.clear_eol+term.move_x(max(0,(term.width/2)-40))+text[i+offset])
+
         event, data = session.read_events(('input', 'refresh'))
 
         if event == 'refresh':
