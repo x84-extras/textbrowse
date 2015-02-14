@@ -14,12 +14,13 @@ Using the script to display .txt files in fbrowse.py
 ----------------------------------------------------
 As the fbrowse.py script is being updated constantly there can't be any precise installation instructions.
 
-1. Search for `if lightbar.selected or inp in (term.KEY_LEFT, term.KEY_RIGHT,):` in fbrowse.py
-2. Add the following lines of code beneath that line:
+1. Add `from x84.bbs import gosub` to the imports section in fbrowse.py
+2. Search for `if lightbar.selected or inp in (term.KEY_LEFT, term.KEY_RIGHT,):` in fbrowse.py
+3. Add the following lines of code beneath that line:
 
    ```python
-   if ext in COLLY_EXTENSIONS
-           and (lightbar.selected or inp is term.KEY_RIGHT):
+   if (ext in COLLY_EXTENSIONS
+           and (lightbar.selected or inp is term.KEY_RIGHT)):
        gosub('textbrowse',filepath,'/',filename)
        draw_interface(term, lightbar)
    ```
